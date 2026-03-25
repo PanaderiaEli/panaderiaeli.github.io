@@ -21,21 +21,23 @@
   scroll-margin-top: 140px;
 }
 
-    header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 15px 40px;
-      background: #fef3c7;
-      position: sticky;
-      top: 0;
-      z-index: 1000;
-    }
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 40px; /* 🔽 antes 15px */
+  background: #fef3c7;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1); /* 🔥 nuevo */
+}
 
-    .logo {
-      height: 120px;
-      object-fit: contain;
-    }
+.logo {
+  height: 90px; /* 🔽 antes 120px */
+  object-fit: contain;
+  background: transparent; /* 🔥 nuevo */
+}
 
     .nav-right {
       display: flex;
