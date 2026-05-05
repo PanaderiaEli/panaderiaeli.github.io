@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
+  <meta name="robots" content="noindex, nofollow">
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Panadería Eli</title>
@@ -186,6 +187,38 @@
       border: none;
       border-radius: 10px;
     }
+    /* PEDIDOS */
+#pedidos {
+  scroll-margin-top: 140px;
+}
+
+.pedido-box {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 30px;
+}
+
+.pedido-card {
+  background: white;
+  border-radius: 12px;
+  padding: 25px;
+  width: 320px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  text-align: center;
+}
+
+.btn {
+  display: inline-block;
+  margin-top: 15px;
+  padding: 12px 20px;
+  background: #ea580c;
+  color: white;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 600;
+}
   </style>
 </head>
 <body>
@@ -198,6 +231,7 @@
     <a href="#nosotros">Sobre Nosotros</a>
     <a href="#productos">Productos</a>
     <a href="#contacto">Contacto</a>
+    <a href="#pedidos">Pedidos</a>
     <span class="direccion">Calle Chantada 11, Madrid</span>
   </div>
 </header>
@@ -242,7 +276,7 @@
       <div class="card"><img src="Pasteleria.png"><h3>Pasteles</h3></div>
       <div class="card"><img src="Bebidas.png"><h3>Bebidas</h3></div>
       <div class="card"><img src="Fruteria.png"><h3>Frutería</h3></div>
-      <div class="card"><img src="Almacen_v2.png"><h3>Almacen</h3></div>
+      <div class="card"><img src="Almacen.png"><h3>Snacks</h3></div>
       <div class="card"><img src="Verduleria.png"><h3>Verdulería</h3></div>
       <div class="card"><img src="Helados.png"><h3>Helados</h3></div>
     </div>
@@ -272,6 +306,40 @@
   </section>
 
 </div>
+
+<section class="section" id="pedidos">
+  <h2>Realizar Pedido</h2>
+  <p>Elegí cómo querés hacer tu pedido</p>
+
+  <div class="pedido-box">
+
+    <!-- Pedido rápido -->
+    <div class="pedido-card">
+      <h3>Pedido rápido</h3>
+      <p>¿Pasás en un rato? Pedinos por WhatsApp y lo dejamos listo.</p>
+
+      <a class="btn"
+         href="https://wa.me/34638897469?text=Hola%20Eli,%20quiero%20hacer%20un%20pedido%20rápido%20de..."
+         target="_blank">
+         📲 Pedir por WhatsApp
+      </a>
+    </div>
+
+    <!-- Pedido por encargo -->
+    <div class="pedido-card">
+      <h3>Pedido por encargo</h3>
+      <p>Hacé tu pedido con tiempo y elegí entre nuestras opciones.</p>
+
+      <a class="btn"
+         href="https://docs.google.com/forms/d/e/1FAIpQLScBD8T73ubwe4r-dHB_KNCenqO69DE7XNv2TfUkgimLo8GmLA/viewform?usp=publish-editor"
+         target="_blank">
+         📝 Hacer pedido
+      </a>
+    </div>
+
+  </div>
+</section>
+
 <section class="section" id="contacto">
   <h2>Contacto</h2>
 
