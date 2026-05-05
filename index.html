@@ -32,12 +32,19 @@
       top: 0;
       z-index: 1000;
       box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+      flex-wrap: wrap;
     }
 
     .logo {
       height: 90px;
       object-fit: contain;
-      background: transparent;
+    }
+
+    .menu-toggle {
+      display: none;
+      font-size: 2em;
+      cursor: pointer;
+      color: #7c2d12;
     }
 
     .nav-right {
@@ -187,46 +194,103 @@
       border: none;
       border-radius: 10px;
     }
-    /* PEDIDOS */
-#pedidos {
-  scroll-margin-top: 140px;
-}
 
-.pedido-box {
-  display: flex;
-  gap: 20px;
-  justify-content: center;
-  flex-wrap: wrap;
-  margin-top: 30px;
-}
+    #pedidos {
+      scroll-margin-top: 140px;
+    }
 
-.pedido-card {
-  background: white;
-  border-radius: 12px;
-  padding: 25px;
-  width: 320px;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-  text-align: center;
-}
+    .pedido-box {
+      display: flex;
+      gap: 20px;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin-top: 30px;
+    }
 
-.btn {
-  display: inline-block;
-  margin-top: 15px;
-  padding: 12px 20px;
-  background: #ea580c;
-  color: white;
-  border-radius: 8px;
-  text-decoration: none;
-  font-weight: 600;
-}
+    .pedido-card {
+      background: white;
+      border-radius: 12px;
+      padding: 25px;
+      width: 320px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      text-align: center;
+    }
+
+    .btn {
+      display: inline-block;
+      margin-top: 15px;
+      padding: 12px 20px;
+      background: #ea580c;
+      color: white;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    /* ================= MOBILE ================= */
+
+    @media (max-width: 768px) {
+
+      .menu-toggle {
+        display: block;
+      }
+
+      .nav-right {
+        width: 100%;
+        display: none;
+        flex-direction: column;
+        gap: 15px;
+        margin-top: 10px;
+      }
+
+      .nav-right.active {
+        display: flex;
+      }
+
+      .direccion {
+        display: none;
+      }
+
+      .hero {
+        height: 300px;
+      }
+
+      .hero-content h1 {
+        font-size: 2em;
+      }
+
+      .hero-content p {
+        font-size: 1em;
+      }
+
+      .container {
+        padding: 20px;
+      }
+
+      .info-card,
+      .pedido-card {
+        width: 100%;
+      }
+
+      .local-img {
+        width: 100%;
+        height: auto;
+        margin-top: 20px;
+        border-radius: 10px;
+      }
+    }
+
   </style>
 </head>
+
 <body>
 
 <header>
   <img src="Logo.png" class="logo">
 
-  <div class="nav-right">
+  <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+
+  <div class="nav-right" id="navMenu">
     <a href="#">Inicio</a>
     <a href="#nosotros">Sobre Nosotros</a>
     <a href="#productos">Productos</a>
@@ -258,7 +322,6 @@
 
 <div class="container">
 
-  <!-- SOBRE NOSOTROS -->
 <section class="section" id="nosotros">
   <h2>Sobre Nosotros</h2>
   <p>En Panadería Eli trabajamos cada día para ofrecer productos frescos y de calidad a nuestros vecinos.</p>
@@ -267,43 +330,43 @@
   <img src="PuertaLocal.png" class="local-img">
 </section>
 
-  <section class="section" id="productos">
-    <h2>Nuestros Productos</h2>
+<section class="section" id="productos">
+  <h2>Nuestros Productos</h2>
 
-    <div class="products">
-      <div class="card"><img src="Panaderia.png"><h3>Panadería</h3></div>
-      <div class="card"><img src="Bolleria.png"><h3>Bollería</h3></div>
-      <div class="card"><img src="Pasteleria.png"><h3>Pasteles</h3></div>
-      <div class="card"><img src="Bebidas.png"><h3>Bebidas</h3></div>
-      <div class="card"><img src="Fruteria.png"><h3>Frutería</h3></div>
-      <div class="card"><img src="Almacen.png"><h3>Snacks</h3></div>
-      <div class="card"><img src="Verduleria.png"><h3>Verdulería</h3></div>
-      <div class="card"><img src="Helados.png"><h3>Helados</h3></div>
-    </div>
-  </section>
+  <div class="products">
+    <div class="card"><img src="Panaderia.png"><h3>Panadería</h3></div>
+    <div class="card"><img src="Bolleria.png"><h3>Bollería</h3></div>
+    <div class="card"><img src="Pasteleria.png"><h3>Pasteles</h3></div>
+    <div class="card"><img src="Bebidas.png"><h3>Bebidas</h3></div>
+    <div class="card"><img src="Fruteria.png"><h3>Frutería</h3></div>
+    <div class="card"><img src="Almacen.png"><h3>Snacks</h3></div>
+    <div class="card"><img src="Verduleria.png"><h3>Verdulería</h3></div>
+    <div class="card"><img src="Helados.png"><h3>Helados</h3></div>
+  </div>
+</section>
 
-  <section class="section">
-    <h2>¿Dónde estamos?</h2>
-    <p>Calle Chantada 11, Madrid</p>
-    <iframe src="https://www.google.com/maps?q=Calle+Chantada+11,+Madrid&output=embed"></iframe>
+<section class="section">
+  <h2>¿Dónde estamos?</h2>
+  <p>Calle Chantada 11, Madrid</p>
+  <iframe src="https://www.google.com/maps?q=Calle+Chantada+11,+Madrid&output=embed"></iframe>
 
-    <div style="margin-top:20px;">
-      <a href="https://maps.app.goo.gl/XaeJC1hsK4hK5Q22A" target="_blank"
-        style="background:#ea580c; color:white; padding:12px 25px; border-radius:8px; text-decoration:none; font-weight:600;">
-        ⭐ Ver reseñas en Google
-      </a>
-    </div>
-  </section>
+  <div style="margin-top:20px;">
+    <a href="https://maps.app.goo.gl/XaeJC1hsK4hK5Q22A" target="_blank"
+      style="background:#ea580c; color:white; padding:12px 25px; border-radius:8px; text-decoration:none; font-weight:600;">
+      ⭐ Ver reseñas en Google
+    </a>
+  </div>
+</section>
 
-  <section class="section">
-    <h2>Lo que dicen nuestros clientes</h2>
+<section class="section">
+  <h2>Lo que dicen nuestros clientes</h2>
 
-    <div class="products">
-      <div class="card"><h3>⭐⭐⭐⭐⭐</h3><p>"El mejor pan del barrio, siempre fresco."</p></div>
-      <div class="card"><h3>⭐⭐⭐⭐⭐</h3><p>"Las facturas son increíbles."</p></div>
-      <div class="card"><h3>⭐⭐⭐⭐⭐</h3><p>"Muy buena atención y variedad."</p></div>
-    </div>
-  </section>
+  <div class="products">
+    <div class="card"><h3>⭐⭐⭐⭐⭐</h3><p>"El mejor pan del barrio, siempre fresco."</p></div>
+    <div class="card"><h3>⭐⭐⭐⭐⭐</h3><p>"Las facturas son increíbles."</p></div>
+    <div class="card"><h3>⭐⭐⭐⭐⭐</h3><p>"Muy buena atención y variedad."</p></div>
+  </div>
+</section>
 
 </div>
 
@@ -313,7 +376,6 @@
 
   <div class="pedido-box">
 
-    <!-- Pedido rápido -->
     <div class="pedido-card">
       <h3>Pedido rápido</h3>
       <p>¿Pasás en un rato? Pedinos por WhatsApp y lo dejamos listo.</p>
@@ -325,7 +387,6 @@
       </a>
     </div>
 
-    <!-- Pedido por encargo -->
     <div class="pedido-card">
       <h3>Pedido por encargo</h3>
       <p>Hacé tu pedido con tiempo y elegí entre nuestras opciones.</p>
@@ -345,19 +406,20 @@
 
   <div class="contact-box">
     <p>📞 Teléfono: <a href="tel:919470208">919 470 208</a></p>
-
     <p>📱 Móvil: <a href="tel:638897469">638 897 469</a></p>
-
-    <p>💬 WhatsApp: 
-      <a href="https://wa.me/34638897469" target="_blank">Enviar mensaje</a>
-    </p>
+    <p>💬 WhatsApp: <a href="https://wa.me/34638897469" target="_blank">Enviar mensaje</a></p>
   </div>
 </section>
-
 
 <footer>
   <p>© 2026 Panadería Eli</p>
 </footer>
+
+<script>
+function toggleMenu() {
+  document.getElementById("navMenu").classList.toggle("active");
+}
+</script>
 
 </body>
 </html>
